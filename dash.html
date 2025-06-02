@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBuddy</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton+SC&family=Bangers&family=Bebas+Neue&family=Cal+Sans&family=Days+One&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Staatliches&family=Unbounded:wght@200..900&family=Varela&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Allura&family=Anton+SC&family=Bangers&family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Cabin:ital,wght@0,400..700;1,400..700&family=Cal+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Days+One&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Staatliches&family=Unbounded:wght@200..900&family=Varela&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+        *{
+            font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  overflow-x: hidden;
+        }
+        input::placeholder{
+            font-family: "Unbounded", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 0.6em;
+  padding-left: 0.2em;
+
+        }
+        input{
+            border: 2px solid black;
+        }
+        .inn{
+            width: 100%;
+           
+            display: flex;
+            flex-direction: column;
+        }
+        body{
+            height: 110vh;
+        }
+    </style>
+</head>
+<body style="background-color:rgb(69, 100, 72);">
+    <header class="d-flex align-items-center  justify-content-between p-3"><h1 id="w" class="text-light p-4" style="font-size: 1.5em;"></h1>
+    
+    <div class="d-flex gap-4 me-5  align-items-center "><i class="fa-solid fa-comment bg-light p-3 text-success rounded-circle"></i><i class="fa-solid fa-bell bg-light p-3 text-success rounded-circle" type="button" data-bs-toggle="popover" data-bs-title="Popover title" data-bs-content="And here’s some amazing content. It’s very engaging. Right?"></i><i class="fa-solid fa-gear bg-light p-3 text-success rounded-circle"></i><div class="d-flex px-2 py-1 gap-1 bg-light  align-items-center " style="border-radius: 80px;"><img src="https://cdni.iconscout.com/illustration/premium/thumb/profile-status-illustration-download-in-svg-png-gif-file-formats--active-online-social-media-avatar-web-problems-and-solutions-pack-people-illustrations-6359967.png" height="50px" width="50px" class="rounded-circle" alt=""><p id="w1" class="mt-3 me-4" style="font-size: 0.8em;"></p></div><button class="btn btn-danger shadow " style="font-size: 0.6em;" onclick="log()">Log out</button></div>
+</header>
+
+<div class="con  mx-4 d-flex gap-4">
+    <div class="in d-flex flex-column gap-4" style="width: 35%;">
+        <div class="inn shadow rounded bg-light p-4 gap-4 text-success"><h6>ADD Income</h6>
+        <input type="number" name="" id="inc" class="form-control" placeholder="Amount">
+    <button class="btn btn-success" style="font-size: 0.8em;" onclick="income()">ADD</button></div>
+        <div class="inn shadow rounded bg-light shadow rounded bg-light text-success p-4 gap-4">
+            <h6>ADD Expense</h6>
+            <input type="text" name="" id="ex" class="form-control" placeholder="Expense Title">
+            <input type="number" name="" id="exmoni" class="form-control" placeholder="Amount">
+            <button class="btn btn-success" style="font-size: 0.8em;" onclick="budget()">ADD</button>
+        </div>
+        <button class="btn btn-danger" style="font-size: 0.8em;" onclick="reset()">Reset All</button>
+    </div>
+    <div class="budget shadow rounded bg-light p-4" style="width: 65%; height: 33em;">
+        <div class="row gap-4  d-flex">
+            <div class="col bg-success p-3 d-flex align-items-center rounded text-light px-3" style="font-size: 0.8em;">Total Budget : <span id="tb" class="ms-2"></span></div>
+            <div class="col bg-success p-3 d-flex align-items-center rounded text-light px-3" style="font-size: 0.8em;">Total Expense : <span id="te" class="ms-2"></span></div>
+            <div class="col bg-success p-3 d-flex align-items-center rounded text-light px-3" style="font-size: 0.8em;">Budget Left : <span id="bl" class="ms-2"></span></div>
+        </div>
+        <hr>
+        <p style="font-size: 0.7em;">Expense History :</p>
+        <hr>
+        <table class="table table-hover table-success text-center fw-sm">
+  <thead>
+    <tr>
+      <th scope="col" class="">Expense</th>
+      <th scope="col" class="">Amount</th>
+      <th scope="col" class="">Details</th>
+    </tr>
+  </thead>
+  <tbody id="t">
+    
+    
+  </tbody>
+</table>
+    </div>
+
+</div>
+
+
+ 
+
+
+    
+    <script>
+
+    const currentuser= JSON.parse(sessionStorage.getItem('cuser'))
+    console.log(currentuser);
+    htmlData="";
+    htmlData2=""
+    htmlData=`<span style="font-size:2em" class="me-2">Welcome</span>  ${currentuser.username} !`
+        htmlData2=`  ${currentuser.username}  `
+    w.innerHTML=htmlData;
+     w1.innerHTML=htmlData2;
+ let Income=inc.value;
+     function income(){
+
+       Income=inc.value
+
+        if(Income){
+
+            let I=`${Income} Rs `
+            tb.innerHTML=I;
+
+            alert(` Income added Succesfully`)
+            console.log(Income); }
+        else{
+            alert("Please Enter your Income")
+        }
+        
+        
+     }
+     let tot=0;
+     function budget(){
+
+if(Income){
+    console.log(tot);
+    
+    
+    
+
+    let expensetitle=ex.value;
+     let  expensemoney=parseFloat(exmoni.value) 
+
+        if(expensemoney && expensetitle){
+  console.log(expensetitle);
+        console.log(expensemoney);
+         
+        tot+=expensemoney;
+ 
+        let total=`${tot} Rs`
+        te.innerHTML=total
+
+        let rem=`${Income-tot} Rs`
+        bl.innerHTML=rem;
+
+        alert("Expense Details Added Successfully")
+        let nowdate= new Date();
+      
+    const hour=nowdate.getHours();
+    console.log(hour);
+    const min=nowdate.getMinutes();
+    console.log(min);
+    
+    const sec=nowdate.getSeconds();
+    console.log(sec);
+
+         
+
+        let table=` <tr style="font-size:0.7em"><td>${expensetitle} </td>
+        <td>${expensemoney} Rs</td>
+        <td>${hour} : ${min} : ${sec}</td>
+         </tr>`
+
+        t.innerHTML+=table
+
+       
+        ex.value="";
+        exmoni.value="";
+
+        switch(true){
+case(Income>tot):
+alert(` Congrats You Have saved ${Income-tot} Rs`)
+break;
+
+case(tot>Income):
+   alert(`Your expenses have surpassed the allocated budget by ${tot-Income} Rs`) 
+break;
+
+case(tot==Income):
+alert("Your Income matches your Expenses. Consider allocating a portion to savings or investments to build financial security.")
+break;
+}
+
+       
+
+        
+        }
+        else{
+            alert("Please Fill Both Fields")
+        }
+
+}
+else{
+    alert("You Haven't added your Income Yet")
+}
+       
+        
+      
+        
+     }
+     function reset(){
+
+       if(confirm("This action will remove all your entered data . Do you Still want to continue ?")) {
+            
+
+            if(t.textContent.trim()==""){
+                alert("There is nothing to Clear")
+            }
+            else{
+                alert("Records Successfully Cleared")
+
+        
+                t.innerHTML='';
+                inc.value='';
+                tb.innerHTML='';
+                te.innerHTML='';
+                bl.innerHTML='';
+
+            }
+        }
+        
+     }
+
+     function log(){
+
+        if(confirm("Are you sure you want to log out?")){
+
+            
+
+            alert(`Successfully Logged out`);
+            window.location.href='./login/index.html'
+        }
+     }
+
+     
+     
+
+    
+</script>
+</body>
+</html>
